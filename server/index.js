@@ -19,7 +19,7 @@ app.get('/kittens', async (req, res) => {
     const kitten = new Kitten({ name: req.query.name })
     await kitten.save()
 
-    // get all kittens
+    // get all the kittens
     const kittens = await Kitten.find({}, 'name -_id').exec()
     res.send(kittens)
   } catch (e) {
